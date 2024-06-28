@@ -325,4 +325,7 @@ function updateUI() {
 }
 
 // Initialize
-setLanguage('en');
+document.addEventListener('DOMContentLoaded', function() {
+    setLanguage('en');
+    updateUI();
+});
