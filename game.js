@@ -274,6 +274,7 @@ function setLanguage(lang) {
 }
 
 function setPlayerCount() {
+    console.log("setPlayerCount function called");
     totalPlayers = parseInt(document.getElementById('player-count').value);
     if (totalPlayers < 7 || totalPlayers > 20) {
         alert("Please enter a number between 7 and 20");
@@ -283,6 +284,7 @@ function setPlayerCount() {
     document.getElementById('game-setup').style.display = 'none';
     document.getElementById('game-area').style.display = 'block';
     updateUI();
+    console.log("Game setup complete. Total players:", totalPlayers);
 }
 
 function generateCards(playerCount) {
@@ -297,6 +299,7 @@ function generateCards(playerCount) {
 }
 
 function drawCard() {
+    console.log("drawCard function called");
     if (remainingCards.length === 0) {
         alert("No more cards to draw!");
         return;
@@ -304,6 +307,7 @@ function drawCard() {
     const role = remainingCards.pop();
     displayRoleInfo(role);
     updateUI();
+    console.log("Card drawn:", role);
 }
 
 function displayRoleInfo(role) {
@@ -318,9 +322,10 @@ function displayRoleInfo(role) {
 }
 
 function updateUI() {
+    console.log("updateUI function called");
     document.getElementById('setup-title').textContent = translations[currentLanguage].setupTitle;
-    document.querySelector('#game-setup button').textContent = translations[currentLanguage].setPlayers;
-    document.querySelector('#game-area button').textContent = translations[currentLanguage].drawCard;
+    document.getElementById('set-players-btn').textContent = translations[currentLanguage].setPlayers;
+    document.getElementById('draw-card-btn').textContent = translations[currentLanguage].drawCard;
     document.getElementById('players-remaining').textContent = `${translations[currentLanguage].playersRemaining}: ${remainingCards.length}`;
 }
 
