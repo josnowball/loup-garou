@@ -331,6 +331,10 @@ function updateUI() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
     setLanguage('en');
     updateUI();
 });
+
+// Add this line at the end of your file to check if it's loaded
+console.log("game.js fully loaded");
