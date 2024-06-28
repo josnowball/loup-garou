@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loup Garou Card Distributor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+        #role-info {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="language-select">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('fr')">Français</button>
+        <button onclick="setLanguage('es')">Español</button>
+        <button onclick="setLanguage('zh')">中文</button>
+    </div>
+
+    <div id="game-setup">
+        <h2 id="setup-title"></h2>
+        <input type="number" id="player-count" min="7" max="20" value="7">
+        <button onclick="setPlayerCount()"></button>
+    </div>
+
+    <div id="game-area" style="display: none;">
+        <h2 id="players-remaining"></h2>
+        <button onclick="drawCard()"></button>
+        <div id="role-info"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
